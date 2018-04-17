@@ -5,11 +5,13 @@ const PORT = 5000; // never changes, so we make it all caps (any port from 1025 
 
 // req is request, res is response
 
-app.get('/', function (req, res) {
-    res.send('Hello World');
-});
+// app.get('/', function (req, res) {
+//     res.send('Hello World');
+// });
 
-app.get('/hey', function(req, res) {
+app.use(express.static('server/public'));
+
+app.get('/hey', function (req, res) {
     res.send('Howdy');
 });
 
